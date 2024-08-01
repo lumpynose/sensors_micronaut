@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>sensors</title>
+<link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sensor</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Pressure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row" th:each="iter : ${sensors}">
+                <td th:text="${iter.key}">key</td>
+                <td
+                    th:text="|${#numbers.formatDecimal(iter.value.temperatureShow,1,1)} ${iter.value.temperatureLetter}|">
+                    temperature</td>
+                <td
+                    th:text="${iter.value.humidity} ? ${iter.value.humidity} : '---'">
+                    humidity</td>
+                <td
+                    th:text="${iter.value.pressure} ? ${iter.value.pressure} : '---'">
+                    humidity</td>
+            </tr>
+        </tbody>
+    </table>
+    <footer class="footer" th:insert="~{footer :: copy}"> </footer>
+</body>
+</html>

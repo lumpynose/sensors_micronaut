@@ -1,0 +1,30 @@
+# https://git-scm.com/book/en/v2
+
+# used 03jul24; use gitbash
+#
+# 1) quit eclipse.
+#
+# 2) create a new empty project on GitHub.
+#
+# 3) copy README.md, and LICENSE from GitHub to the eclipse project,
+# then delete them on GitHub.  Copy .gitignore from another project.
+#
+# 4) In the eclipse project use gitbash and do the following steps.
+
+git init
+git add .
+git commit -m "initial commit"
+git branch -M main
+git remote add origin git@github.com:lumpynose/sensors_micronaut.git
+git push --force -u origin main
+
+# after doing the above
+# start eclipse
+# right click on the project
+# near the bottom of the flyout menu select Team -> Share project
+# in eclipse as a test edit the README.md file and add a line
+# right click on the project and select Team -> Commit
+
+# if you start with a new workspace, remember you can copy the project
+# into the new workspace and then select the copied project with
+File -> Import -> Maven -> Existing maven project

@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 3px solid rgb(140, 140, 140);
+    font-size: x-large;
+}
+
+thead>tr {
+    font-weight: bold;
+    font-style: italic;
+    background-color: rgb(228, 228, 228);
+}
+
+tbody {
+    border-top: 0.5em;
+}
+
+th, td {
+    padding: 0.2em;
+    border: 2px solid rgb(160, 160, 160);
+}
+
+tr>th:nth-of-type(1), tr>td {
+    padding-right: 1em;
+}
+
+.footer {
+    padding-top: 2em;
+}
