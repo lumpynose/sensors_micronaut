@@ -22,7 +22,8 @@ git push --force -u origin main
 # start eclipse
 # right click on the project
 # near the bottom of the flyout menu select Team -> Share project
-# in eclipse as a test edit the README.md file and add a line
+
+# in eclipse as a test, edit the README.md file and add a line
 # right click on the project and select Team -> Commit
 
 # if you start with a new workspace, remember you can copy the project
