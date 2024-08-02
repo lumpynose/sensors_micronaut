@@ -84,12 +84,6 @@
                             <groupId>io.micronaut.validation</groupId>
                             <artifactId>micronaut-validation-processor</artifactId>
                         </path>
-
-                        <dependency>
-                            <groupId>io.micronaut.validation</groupId>
-                            <artifactId>micronaut-validation</artifactId>
-                            <scope>compile</scope>
-                        </dependency>
                     </annotationProcessorPaths>
                     <compilerArgs>
                         <arg>-Amicronaut.processing.group=com.objecteffects</arg>
@@ -140,6 +134,12 @@
             <groupId>io.micronaut.sql</groupId>
             <artifactId>micronaut-jdbc-tomcat</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.micronaut.validation</groupId>
+            <artifactId>micronaut-validation</artifactId>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
