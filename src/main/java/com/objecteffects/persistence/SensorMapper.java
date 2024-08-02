@@ -14,7 +14,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 
-public interface SensorRepository {
+public interface SensorMapper {
     @Select("select * from sensors where id=#{id}")
     Sensor findById(long id);
 
