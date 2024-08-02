@@ -15,8 +15,8 @@ import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 
 @Singleton
-public class SensorMapperImpl implements SensorMapper {
-    final static Logger log = LoggerFactory.getLogger(SensorMapperImpl.class);
+public class SensorRepositoryImpl implements SensorRepository {
+    final static Logger log = LoggerFactory.getLogger(SensorRepositoryImpl.class);
 
     @Inject
     private SqlSessionFactory sqlSessionFactory;
@@ -99,7 +99,7 @@ public class SensorMapperImpl implements SensorMapper {
     }
 
     @SuppressWarnings("static-method")
-    private SensorMapper getSensorMapper(SqlSession sqlSession) {
-        return sqlSession.getMapper(SensorMapper.class);
+    private SensorRepository getSensorMapper(SqlSession sqlSession) {
+        return sqlSession.getMapper(SensorRepository.class);
     }
 }

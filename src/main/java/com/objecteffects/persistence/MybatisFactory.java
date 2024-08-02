@@ -18,7 +18,7 @@ import jakarta.inject.Singleton;
 
 @Factory
 public class MybatisFactory {
-    final static Logger log = LoggerFactory.getLogger(SensorMapperImpl.class);
+    final static Logger log = LoggerFactory.getLogger(SensorRepositoryImpl.class);
 
     @Inject
     DataSource dataSource;

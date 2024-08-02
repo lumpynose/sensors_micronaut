@@ -67,6 +67,7 @@
                             <artifactId>micronaut-http-validation</artifactId>
                             <version>${micronaut.core.version}</version>
                         </path>
+
                         <path>
                             <groupId>io.micronaut.serde</groupId>
                             <artifactId>micronaut-serde-processor</artifactId>
@@ -78,6 +79,17 @@
                                 </exclusion>
                             </exclusions>
                         </path>
+
+                        <path>
+                            <groupId>io.micronaut.validation</groupId>
+                            <artifactId>micronaut-validation-processor</artifactId>
+                        </path>
+
+                        <dependency>
+                            <groupId>io.micronaut.validation</groupId>
+                            <artifactId>micronaut-validation</artifactId>
+                            <scope>compile</scope>
+                        </dependency>
                     </annotationProcessorPaths>
                     <compilerArgs>
                         <arg>-Amicronaut.processing.group=com.objecteffects</arg>
@@ -151,12 +163,6 @@
         <dependency>
             <groupId>org.eclipse.paho</groupId>
             <artifactId>org.eclipse.paho.mqttv5.client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>8.0.1.Final</version>
         </dependency>
 
         <dependency>
