@@ -85,6 +85,7 @@
                             <artifactId>micronaut-validation-processor</artifactId>
                         </path>
                     </annotationProcessorPaths>
+
                     <compilerArgs>
                         <arg>-Amicronaut.processing.group=com.objecteffects</arg>
                         <arg>-Amicronaut.processing.module=default</arg>

@@ -1,4 +1,4 @@
-package com.objecteffects.persistence;
+package com.objecteffects.persistence.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -22,15 +22,15 @@ public class Sensor {
     private String displayName;
 
     @Nullable
-    private Boolean hide;
+    private Integer channel;
 
     @Nullable
     public Long getId() {
         return this.id;
     }
 
-    public void setId(@Nullable Long id) {
-        this.id = id;
+    public void setId(@Nullable Long _id) {
+        this.id = _id;
     }
 
     @NonNull
@@ -38,32 +38,34 @@ public class Sensor {
         return this.name;
     }
 
-    public void setName(@NonNull String name) {
-        this.name = name;
+    public void setName(@NonNull String _name) {
+        this.name = _name;
     }
 
     @NotBlank
+    @Nullable
     public String getDisplayName() {
         return this.displayName;
     }
 
-    public void setDisplayName(@NotBlank String displayName) {
-        this.displayName = displayName;
+    public void setDisplayName(@NotBlank @Nullable String _displayName) {
+        this.displayName = _displayName;
     }
 
     @Nullable
-    public Boolean getHide() {
-        return this.hide;
+    public Integer getChannel() {
+        return this.channel;
     }
 
-    public void setHide(@Nullable Boolean hide) {
-        this.hide = hide;
+    public void setChannel(@Nullable Integer _channel) {
+        this.channel = _channel;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this).append(this.id).append(this.name)
-            .append(this.displayName).append(this.hide).toString();
+            .append(this.displayName).append(this.channel)
+            .build();
 
     }
 }

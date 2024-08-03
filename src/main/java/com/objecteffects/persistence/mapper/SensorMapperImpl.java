@@ -1,6 +1,8 @@
-package com.objecteffects.persistence;
+package com.objecteffects.persistence.mapper;
 
 import java.util.List;
+
+import com.objecteffects.persistence.domain.Sensor;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -95,6 +97,14 @@ public class SensorMapperImpl implements SensorMapper {
         try (SqlSession sqlSession = this.sqlSessionFactory.openSession()) {
             return getSensorMapper(sqlSession).findAllByOffsetAndMax(offset,
                 max);
+        }
+    }
+
+    @Override
+    public List<Sensor> findByHidden() {
+
+        try (SqlSession sqlSession = this.sqlSessionFactory.openSession()) {
+            return getSensorMapper(sqlSession).findByHidden();
         }
     }
 

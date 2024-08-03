@@ -2,6 +2,8 @@ package com.objecteffects.persistence;
 
 import javax.sql.DataSource;
 
+import com.objecteffects.persistence.mapper.SensorMapperImpl;
+
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -31,7 +33,7 @@ public class MybatisFactory {
             new Environment("dev", transactionFactory, this.dataSource);
 
         Configuration configuration = new Configuration(environment);
-        configuration.addMappers("com.objecteffects.persistence");
+        configuration.addMappers("com.objecteffects.persistence.mapper");
 
         return new SqlSessionFactoryBuilder().build(configuration);
     }

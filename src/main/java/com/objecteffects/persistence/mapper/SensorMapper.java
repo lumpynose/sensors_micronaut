@@ -1,6 +1,8 @@
-package com.objecteffects.persistence;
+package com.objecteffects.persistence.mapper;
 
 import java.util.List;
+
+import com.objecteffects.persistence.domain.Sensor;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -46,4 +48,7 @@ public interface SensorMapper {
     @Select("select * from sensors limit ${offset}, ${max}")
     List<Sensor> findAllByOffsetAndMax(@PositiveOrZero int offset,
         @Positive int max);
+
+    @Select("select * from sensors where hidden=true")
+    List<Sensor> findByHidden();
 }
