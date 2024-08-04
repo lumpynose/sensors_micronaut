@@ -1,8 +1,6 @@
-package com.objecteffects.persistence;
+package com.objecteffects.persistence.mybatis;
 
 import javax.sql.DataSource;
-
-import com.objecteffects.persistence.mapper.SensorMapperImpl;
 
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;

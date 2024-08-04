@@ -1,4 +1,4 @@
-package com.objecteffects.persistence.mapper;
+package com.objecteffects.persistence.mybatis;
 
 import java.util.List;
 
