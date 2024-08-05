@@ -18,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
 @Singleton
@@ -26,15 +25,16 @@ public class MqttListener implements IMqttMessageListener {
     final static Logger log = LoggerFactory.getLogger(MqttListener.class);
 
     private MqttClient client;
-
-    @Inject
-    ProcessMessage processMessage;
-
-    @Inject
-    Sensors sensors;
+    private ProcessMessage processMessage;
+    private Sensors sensors;
 
     private final Map<String, SensorData> sensorsMap =
         new ConcurrentHashMap<>();
+
+    public MqttListener(ProcessMessage _processMessage, Sensors _sensors) {
+        this.processMessage = _processMessage;
+        this.sensors = _sensors;
+    }
 
     @PostConstruct
     @SuppressWarnings("static-method")

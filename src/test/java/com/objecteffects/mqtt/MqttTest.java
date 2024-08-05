@@ -2,6 +2,7 @@ package com.objecteffects.mqtt;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
+import com.objecteffects.sensors.ProcessMessage;
 import com.objecteffects.sensors.Sensors;
 
 import org.awaitility.Awaitility;
@@ -14,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+
 import jakarta.inject.Inject;
 
 @MicronautTest
@@ -47,7 +49,8 @@ class MqttTest {
 
         MqttClient client = this.connect.connect(broker);
         this.listener.setClient(client);
-        this.listen.listen(client, topics, qos, new MqttListener());
+        this.listen.listen(client, topics, qos,
+            new MqttListener(new ProcessMessage(), this.sensors));
 
         Awaitility.setDefaultPollInterval(1000, MILLISECONDS);
 
